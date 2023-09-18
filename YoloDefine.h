@@ -9,8 +9,17 @@ typedef struct _DetectionResultNode
 }ResultNode, *pResultNode;
 
 
-typedef struct RawResult
+
+struct RawResult
 {
-    
-}RawResult, *pRawResult;
+    float cx;       // center x
+    float cy;       // center y
+    float w;        // width
+    float h;        // height
+    float cls_conf; // class confidence
+}__attribute__((packed));
+
+typedef RawResult* pRawResult;
+
+#define YOLOV5_OUTBOX_ELEMENT_COUNT 5
 

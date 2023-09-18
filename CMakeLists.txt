@@ -35,5 +35,6 @@ target_link_libraries(
     ${PROJECT_NAME}
     onnxruntime
     ${OpenCV_LIBS}
+    X11
 )
 

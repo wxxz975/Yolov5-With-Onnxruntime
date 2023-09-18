@@ -377,4 +377,5 @@ CMakeFiles/OnnxDetector.dir/main.cpp.o: \
  /home/wxxz/workspace/OnnxruntimeDetector/yolov5/ModelProcessor.h \
  /home/wxxz/workspace/OnnxruntimeDetector/Model.h \
  /home/wxxz/workspace/OnnxruntimeDetector/yolov5/ModelParser.h \
- /home/wxxz/workspace/OnnxruntimeDetector/ISession.h
+ /home/wxxz/workspace/OnnxruntimeDetector/ISession.h \
+ /home/wxxz/workspace/OnnxruntimeDetector/Mics.h

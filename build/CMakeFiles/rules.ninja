@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/wxxz/tools/cmake-3.27.4-linux-x86_64/bin/cmake --regenerate-during-build -S/home/wxxz/workspace/OnnxruntimeDetector -B/home/wxxz/workspace/OnnxruntimeDetector/build
+  command = /home/wxxz/anaconda3/envs/yolov5/lib/python3.10/site-packages/cmake/data/bin/cmake --regenerate-during-build -S/home/wxxz/workspace/OnnxruntimeDetector -B/home/wxxz/workspace/OnnxruntimeDetector/build
   description = Re-running CMake...
   generator = 1
 
