@@ -11,8 +11,10 @@
 
 int main(int argc, char* argv[])
 {
-    const std::string imageExt = ".jpg";
-    bool renderAndSave = true;
+    const std::string imageExt = ".jpg"; // 图像的扩展名
+    bool renderAndSave = true; // 是否绘制外框
+
+
     ISession *session = new Yolov5Session();
     bool isValid = session->Initialize("/home/wxxz/workspace/weights/x_ray.onnx");
     auto* model = session->GetModel();
@@ -25,7 +27,7 @@ int main(int argc, char* argv[])
     }   
 
 
-    data = argv[1];
+    data = argv[1]; // 获取图像的完整地址
     std::vector<std::string> filenames;
     if(std::filesystem::is_directory(data))
     {
@@ -43,7 +45,8 @@ int main(int argc, char* argv[])
         return 0;
 
 
-    
+
+
     for(const auto& imagePath : filenames)
     {
         cv::Mat image = cv::imread(imagePath);
@@ -66,7 +69,7 @@ int main(int argc, char* argv[])
         {
             cv::Mat out = RenderBoundingBoxes(image, result, model->labels);
             std::filesystem::path oriPath = imagePath;
-            std::string newPath = std::filesystem::current_path().string() + "/"  + oriPath.filename().string();
+            std::string newPath = std::filesystem::current_path().string() + "/result/"  + oriPath.filename().string();
 
             cv::imwrite(newPath, out);
         }
