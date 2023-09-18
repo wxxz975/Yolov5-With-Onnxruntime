@@ -21,5 +21,6 @@ struct RawResult
 
 typedef RawResult* pRawResult;
 
+// 占用多少个， 一个box中占用5个元素
 #define YOLOV5_OUTBOX_ELEMENT_COUNT 5
 

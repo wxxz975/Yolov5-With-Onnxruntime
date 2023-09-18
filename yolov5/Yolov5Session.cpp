@@ -21,7 +21,8 @@ Yolov5Session::~Yolov5Session()
 
 bool Yolov5Session::Initialize(const std::string& modelPath)
 {
-    return CreateSession(modelPath) && ParseModel();
+    
+    return CreateSession(modelPath) && ParseModel() && WarmUpModel();
 }
 
 std::vector<ResultNode> Yolov5Session::Detect(const cv::Mat& image)
@@ -94,4 +95,39 @@ bool Yolov5Session::IsGPUAvailable()
         "CUDAExecutionProvider");
 
     return cudaAvailable != availableProviders.end();
+}
+
+template<class T>
+static size_t MultiVec(const std::vector<T>& data)
+{
+    size_t total = 1;
+    for(const auto& it : data)
+        total *= it;
+    
+    return total;
+}
+
+bool Yolov5Session::WarmUpModel()
+{
+    if(!warmup) 
+        return true;
+
+    Ort::MemoryInfo memInfo = Ort::MemoryInfo::CreateCpu(OrtAllocatorType::OrtArenaAllocator, OrtMemTypeDefault);
+    const auto& inputName = model_->inputNamesPtr;
+    const auto& outputName = model_->outputNamesPtr;
+    const auto& inputShape =  model_->inputShapes;
+    size_t inputSize = MultiVec(inputShape.at(0));
+
+    std::vector<float> input_data(inputSize);
+
+
+    std::vector<Ort::Value> fetches;
+    fetches.push_back(
+        Ort::Value::CreateTensor<float>(memInfo, input_data.data(), input_data.size(), inputShape[0].data(), inputShape[0].size())
+    );
+
+    
+    session_.Run(Ort::RunOptions{nullptr}, inputName.data(), fetches.data(), fetches.size(), outputName.data(), outputName.size());
+
+    return true;
 }

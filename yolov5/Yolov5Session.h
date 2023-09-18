@@ -29,6 +29,9 @@ private:
 
     bool IsGPUAvailable();
 
+protected:
+    bool WarmUpModel() override;
+
 private:
 
 
@@ -44,4 +47,5 @@ private:
     
 
     bool useGpu = true;
+    bool warmup = true;
 };
