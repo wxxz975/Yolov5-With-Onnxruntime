@@ -13,7 +13,11 @@ int main(int argc, char* argv[])
 {
     const std::string imageExt = ".jpg"; // 图像的扩展名
     bool renderAndSave = true; // 是否绘制外框
-
+    if(argc != 2)
+    {
+        std::cout << "Usage: " << argv[0] << " inputImagePath" << "\n";
+        return 0;
+    }   
 
     ISession *session = new Yolov5Session();
     bool isValid = session->Initialize("/home/wxxz/workspace/weights/x_ray.onnx");
@@ -21,12 +25,7 @@ int main(int argc, char* argv[])
     std::cout << "initialize status:" << (isValid ? "true":"false") << "\n";
 
     std::filesystem::path data;
-    if(argc != 2)
-    {
-        std::cout << "Usage: " << argv[0] << " inputImagePath" << "\n";
-    }   
-
-
+    
     data = argv[1]; // 获取图像的完整地址
     std::vector<std::string> filenames;
     if(std::filesystem::is_directory(data))
