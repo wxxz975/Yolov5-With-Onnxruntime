@@ -44,8 +44,6 @@ int main(int argc, char* argv[])
         return 0;
 
 
-
-
     for(const auto& imagePath : filenames)
     {
         cv::Mat image = cv::imread(imagePath);
@@ -68,7 +66,10 @@ int main(int argc, char* argv[])
         {
             cv::Mat out = RenderBoundingBoxes(image, result, model->labels);
             std::filesystem::path oriPath = imagePath;
-            std::string newPath = std::filesystem::current_path().string() + "/result/"  + oriPath.filename().string();
+            std::string dirPath = std::filesystem::current_path().string() + "/result/";
+            if(!std::filesystem::exists(dirPath))
+                std::filesystem::create_directory(dirPath);
+            std::string newPath = dirPath  + oriPath.filename().string();
 
             cv::imwrite(newPath, out);
         }

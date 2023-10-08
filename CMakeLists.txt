@@ -13,7 +13,7 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 
 # onnxruntime path
 #set(ONNXRUNTIME_HOME "/usr/local")
-set(ONNXRUNTIME_HOME "/usr/local")
+set(ONNXRUNTIME_HOME "/home/wxxz/libs/onnxruntime")
 include_directories(${ONNXRUNTIME_HOME}/include)
 link_directories(${ONNXRUNTIME_HOME}/lib)
 

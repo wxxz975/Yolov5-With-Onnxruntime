@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include <onnxruntime/onnxruntime_cxx_api.h>
+#include <onnxruntime_cxx_api.h>
 #include <opencv2/opencv.hpp>
 
 #include "YoloDefine.h"
