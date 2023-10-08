@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # OnnxruntimeDetector
 onnxruntime wrapper
 =======
@@ -39,5 +38,3 @@ onnxruntime wrapper
      ```bash
         cmake .. && make -j4
     ```
-
->>>>>>> origin/master

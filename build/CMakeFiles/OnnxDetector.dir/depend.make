@@ -144,11 +144,17 @@ CMakeFiles/OnnxDetector.dir/main.cpp.o: /usr/include/opencv4/opencv2/viz/vizcore
 CMakeFiles/OnnxDetector.dir/main.cpp.o: /usr/include/opencv4/opencv2/viz/widgets.hpp
 
 CMakeFiles/OnnxDetector.dir/yolov5/ModelParser.cpp.o: ../Model.h
+CMakeFiles/OnnxDetector.dir/yolov5/ModelParser.cpp.o: /home/wxxz/libs/onnxruntime/include/onnxruntime_c_api.h
+CMakeFiles/OnnxDetector.dir/yolov5/ModelParser.cpp.o: /home/wxxz/libs/onnxruntime/include/onnxruntime_cxx_api.h
+CMakeFiles/OnnxDetector.dir/yolov5/ModelParser.cpp.o: /home/wxxz/libs/onnxruntime/include/onnxruntime_cxx_inline.h
 CMakeFiles/OnnxDetector.dir/yolov5/ModelParser.cpp.o: ../yolov5/ModelParser.cpp
 CMakeFiles/OnnxDetector.dir/yolov5/ModelParser.cpp.o: ../yolov5/ModelParser.h
 
 CMakeFiles/OnnxDetector.dir/yolov5/ModelProcessor.cpp.o: ../Model.h
 CMakeFiles/OnnxDetector.dir/yolov5/ModelProcessor.cpp.o: ../YoloDefine.h
+CMakeFiles/OnnxDetector.dir/yolov5/ModelProcessor.cpp.o: /home/wxxz/libs/onnxruntime/include/onnxruntime_c_api.h
+CMakeFiles/OnnxDetector.dir/yolov5/ModelProcessor.cpp.o: /home/wxxz/libs/onnxruntime/include/onnxruntime_cxx_api.h
+CMakeFiles/OnnxDetector.dir/yolov5/ModelProcessor.cpp.o: /home/wxxz/libs/onnxruntime/include/onnxruntime_cxx_inline.h
 CMakeFiles/OnnxDetector.dir/yolov5/ModelProcessor.cpp.o: ../yolov5/ModelProcessor.cpp
 CMakeFiles/OnnxDetector.dir/yolov5/ModelProcessor.cpp.o: ../yolov5/ModelProcessor.h
 CMakeFiles/OnnxDetector.dir/yolov5/ModelProcessor.cpp.o: /usr/include/opencv4/opencv2/calib3d.hpp
@@ -283,6 +289,9 @@ CMakeFiles/OnnxDetector.dir/yolov5/ModelProcessor.cpp.o: /usr/include/opencv4/op
 CMakeFiles/OnnxDetector.dir/yolov5/Yolov5Session.cpp.o: ../ISession.h
 CMakeFiles/OnnxDetector.dir/yolov5/Yolov5Session.cpp.o: ../Model.h
 CMakeFiles/OnnxDetector.dir/yolov5/Yolov5Session.cpp.o: ../YoloDefine.h
+CMakeFiles/OnnxDetector.dir/yolov5/Yolov5Session.cpp.o: /home/wxxz/libs/onnxruntime/include/onnxruntime_c_api.h
+CMakeFiles/OnnxDetector.dir/yolov5/Yolov5Session.cpp.o: /home/wxxz/libs/onnxruntime/include/onnxruntime_cxx_api.h
+CMakeFiles/OnnxDetector.dir/yolov5/Yolov5Session.cpp.o: /home/wxxz/libs/onnxruntime/include/onnxruntime_cxx_inline.h
 CMakeFiles/OnnxDetector.dir/yolov5/Yolov5Session.cpp.o: ../yolov5/ModelParser.h
 CMakeFiles/OnnxDetector.dir/yolov5/Yolov5Session.cpp.o: ../yolov5/ModelProcessor.h
 CMakeFiles/OnnxDetector.dir/yolov5/Yolov5Session.cpp.o: ../yolov5/Yolov5Session.cpp

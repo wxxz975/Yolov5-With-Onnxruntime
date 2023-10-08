@@ -83,7 +83,7 @@ std::vector<ResultNode> ModelProcessor::Postprocess(const std::vector<Ort::Value
     std::vector<float> confs;
     std::vector<int> classIds;
     const auto& Shape = model_->inputShapes[0];
-    cv::Size resizedImageShape = {Shape[3], Shape[2]};
+    cv::Size resizedImageShape = { static_cast<int>(Shape[3]), static_cast<int>(Shape[2]) };
     
     ParseRawOutput(outTensor, confThreshold, boxes, confs, classIds);
 
