@@ -1,3 +1,0 @@
-/home/wxxz/workspace/OnnxruntimeDetector/build/CMakeFiles/rebuild_cache.dir
-/home/wxxz/workspace/OnnxruntimeDetector/build/CMakeFiles/edit_cache.dir
-/home/wxxz/workspace/OnnxruntimeDetector/build/CMakeFiles/OnnxDetector.dir
