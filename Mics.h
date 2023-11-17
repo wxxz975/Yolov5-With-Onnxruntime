@@ -3,6 +3,12 @@
 #include <opencv2/opencv.hpp>
 #include "YoloDefine.h"
 
+
+/// @brief 绘制框和标签结果到图像上
+/// @param image 需要绘制的图像
+/// @param boxes 推理返回结果
+/// @param labels 所有标签列表
+/// @return 返回绘制好的图像
 inline cv::Mat RenderBoundingBoxes(const cv::Mat& image, const std::vector<ResultNode>& boxes, 
     const std::vector<std::string>& labels)
 {

@@ -15,19 +15,26 @@ public:
 
 
 public:
-    // 初始化 推理会话 、 解析模型
+    /// @brief 初始化 推理会话 、 解析模型
+    /// @param modelPath 模型路径
+    /// @return 返回是否初始化成功
     virtual bool Initialize(const std::string& modelPath) = 0;
 
-    // 推理
+    /// @brief 模型推理入口
+    /// @param image 输入的图像
+    /// @return 返回推理完成的结果
     virtual std::vector<ResultNode> Detect(const cv::Mat& image) = 0;
 
-    // 获取模型参数
+    /// @brief 获取模型参数
+    /// @return 
     virtual Model* GetModel()  { return model_; };
 
-    // 设置confidence 阈值
+    /// @brief 设置confidence 阈值
+    /// @param conf 置信度
     virtual void SetConfidence(float conf) { confidenceThreshold_ = conf; };
 
-    // 设置iou阈值
+    /// @brief 设置iou阈值
+    /// @param iou 交并比阈值, 用于非极大抑制的阈值控制
     virtual void SetIOU(float iou) { iouThreshold_ = iou; };
 
 protected:

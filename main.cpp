@@ -72,6 +72,7 @@ int main(int argc, char* argv[])
             std::string newPath = dirPath  + oriPath.filename().string();
 
             cv::imwrite(newPath, out);
+	    std::cout << "result saved in:" << newPath.c_str() << "\n";
         }
     }
     

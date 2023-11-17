@@ -37,7 +37,7 @@ std::vector<ResultNode> Yolov5Session::Detect(const cv::Mat& image)
 
         std::vector<Ort::Value>outTensor = session_.Run(Ort::RunOptions{nullptr}, inputNames.data(), inputTensor.data(), inputTensor.size(), outputNames.data(), outputNames.size());
         
-        result = processor_->Postprocess(outTensor, image.size(), confidence, iou);
+        result = processor_->Postprocess(outTensor, image.size(), confidenceThreshold_, iouThreshold_);
     }
 
     return result;

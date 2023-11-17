@@ -16,9 +16,10 @@ public:
     Yolov5Session();
     ~Yolov5Session();
 
-    bool Initialize(const std::string& modelPath);
 
-    std::vector<ResultNode> Detect(const cv::Mat& image);
+    bool Initialize(const std::string& modelPath) override;
+
+    std::vector<ResultNode> Detect(const cv::Mat& image) override;
 
 private:
     bool CreateSession(const std::filesystem::path& modelPath);
@@ -30,7 +31,7 @@ private:
     bool IsGPUAvailable();
 
 protected:
-    bool WarmUpModel() override;
+    bool WarmUpModel() override; // 暂时有问题
 
 private:
 
@@ -41,11 +42,7 @@ private:
     std::string envName_;
 
     ModelProcessor *processor_ = nullptr;
-
-    float confidence = 0.5;
-    float iou = 0.6;
     
-
     bool useGpu = true;
     bool warmup = true;
 };
