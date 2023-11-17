@@ -43,6 +43,6 @@ protected:
 protected:
     Model *model_;
 
-    float confidenceThreshold_;
-    float iouThreshold_;
+    float confidenceThreshold_ = 0.5;
+    float iouThreshold_ = 0.45;
 };
